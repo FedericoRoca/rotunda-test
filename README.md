@@ -1,14 +1,15 @@
 **ROTUNDA TEST**
 
 This repository contains two exercises, which can be run separately or together by executing "index.html" file. 
-Each exercise has its logic implemented in its respective ".js" file nad its styles drefined in the corresponding ".scss" file.
+Each exercise has its logic implemented in its respective ".js" file nad its styles defined in the corresponding ".css" file.
 
 To improve the readability and organization of the code, I used the BEM methodology to name the classes.
 
+Bootstrap was used in this project to simplify the application of tooltips and styles since it was a small project that did not require complete customization of the page.
+
 I want to clarify that I added some tags in the html and took into account the contrasts in the styles to improve web accessibility.
 
-I am adding here the description of both exercises:
-
+The description of both projects is added below:
 
 **URL Parser Exercise**
 We need some logic that extracts the variable parts of a url into a hash. The keys of the

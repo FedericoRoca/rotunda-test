@@ -5,6 +5,10 @@ const inputFormatElement = formElement.querySelector(
   ".parser-form__input-format"
 );
 const resultsElement = document.querySelector(".results__content");
+const resultsTitle = document.querySelector(".results__title");
+const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+const container = document.querySelector(".results__content");
+
 
 // Event Listeners
 formElement.addEventListener("submit", (e) => {
@@ -16,9 +20,12 @@ formElement.addEventListener("submit", (e) => {
 function parseURL() {
   const format = inputFormatElement.value.trim();
   const url = inputElement.value.trim();
+  alertPlaceholder.innerHTML = "";
+  container.innerHTML = "";
 
   if (!format || !url) {
-    alert("Please enter both the URL format and the URL to parse.");
+    resultsTitle.classList.add("d-none");
+    appendAlert("Please enter both the URL format and the URL to parse");
     return;
   }
 
@@ -57,12 +64,44 @@ function extractVariableValues(format, url) {
 // Function to render results
 function renderResults(results) {
   const container = document.querySelector(".results__content");
-
   container.innerHTML = "";
 
-  for (const [key, value] of Object.entries(results)) {
-    const resultItem = document.createElement("p");
-    resultItem.textContent = `${key}: ${value}`;
-    container.appendChild(resultItem);
+  if (Object.keys(results).length === 0) {
+    resultsTitle.classList.add("d-none");
+    appendAlert(
+      "Please check the format and URL so we can perform correct parsing."
+    );
+    return;
   }
+
+  resultsTitle.classList.remove("d-none");
+  const resultsHTML = `
+    <div class="bg-light p-3 rounded border">
+      <p class="text-primary">{</p>
+      ${Object.entries(results)
+        .map(
+          ([key, value]) =>
+            `<p class="mb-1 text-secondary">  ${key}: ${value},</p>`
+        )
+        .join("")}
+      <p class="text-primary">}</p>
+    </div>
+  `;
+
+  container.innerHTML = resultsHTML;
+}
+
+
+
+// Function to create alert messege
+function appendAlert(message) {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = [
+    `<div class="alert alert-warning alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    "</div>",
+  ].join("");
+
+  alertPlaceholder.append(wrapper);
 }

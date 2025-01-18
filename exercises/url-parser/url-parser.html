@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Parser Exercise</title>
+</head>
+
+<body>
+    <section class="parser">
+        <h1 class="parser-title">URL Parser</h1>
+        <div>
+            <form class="parser-form">
+                <div class="parser-form-input-container">
+                    <label for="url-input-format" class="parser-form__input-format-label">Enter the URL format:</label>
+                    <input id="url-input-format" type="text" class="parser-form__input-format" />
+                </div>
+                <div class="parser-form-input-container">
+                    <label for="url-input" class="parser-form__input-label">Enter the URL that you want to
+                        parse:</label>
+                    <input id="url-input" type="text" class="parser-form__input" />
+                </div>
+                <button type="submit" aria-label="Parse the provided URL" class="parser-form__button">
+                    Parse URL
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="results">
+        <h2 class="results__title">Parsing Results</h2>
+        <div class="results__content"></div>
+    </section>
+    <section class="alert">
+        <div class="alert-tooltip"></div>
+    </section>
+    <script src="/exercises/url-parser/js/app.js"></script>
+</body>
+
+</html>

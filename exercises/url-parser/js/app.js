@@ -31,10 +31,8 @@ function parseURL() {
 
   const urlObject = extractVariableValues(format, url);
 
-  inputElement.value = "";
-  inputFormatElement.value = "";
-
   renderResults(urlObject);
+  formElement.reset()
 }
 
 // Function to extract variable values from the URL

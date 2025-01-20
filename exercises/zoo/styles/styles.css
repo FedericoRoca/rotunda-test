@@ -1,0 +1,22 @@
+:root {
+    --breakpoint-sm: 768px;
+    --breakpoint-lg: 1280px;
+  }
+
+img {
+    max-height: 75px;
+}
+
+
+@media (min-width: 768px) {
+    img {
+        max-height: 100px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    img {
+        max-height: 150px;
+    }
+  }
+

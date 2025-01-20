@@ -12,6 +12,8 @@ const formElement = document.querySelector(".zoo-form");
 const animalListElement = formElement.querySelector(".zoo-form__select");
 const animalPhraseElement = formElement.querySelector(".zoo-form__input");
 const resultsContainer = document.querySelector(".results-container");
+const resultsTitle = document.querySelector(".results-title");
+
 // Classes
 class Animal {
   constructor(name, sound) {
@@ -40,7 +42,6 @@ Object.entries(AnimalClasses).forEach(([animalName, AnimalClass]) => {
 });
 
 //Options inside select
-
 Object.entries(AnimalInstances).forEach((animal) => {
   const animalItem = document.createElement("option");
   animalItem.textContent = animal[0];
@@ -50,7 +51,8 @@ Object.entries(AnimalInstances).forEach((animal) => {
 //Event Listeners
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  
+  resultsTitle.classList.remove("d-none");
   const selectedAnimal = animalListElement.value;
   const phraseEntered = animalPhraseElement.value;
 

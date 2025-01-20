@@ -1,13 +1,14 @@
 **ROTUNDA TEST**
 
-This repository contains two exercises, which can be run separately or together by executing "index.html" file. 
-Each exercise has its logic implemented in its respective ".js" file nad its styles defined in the corresponding ".css" file.
+This repository contains two exercises, each exercise has its logic implemented in its respective ".js" file and its styles defined in the corresponding ".css" file.
 
 To improve the readability and organization of the code, I used the BEM methodology to name the classes.
 
 Bootstrap was used in this project to simplify the application of tooltips and styles since it was a small project that did not require complete customization of the page.
 
 I want to clarify that I added some tags in the html and took into account the contrasts in the styles to improve web accessibility.
+
+Both projects were carried out to achieve the objective in a simple and concise manner. If you'd like something more complex, with better functionalities,unit tests and a more developed aesthetic, just let me know.
 
 The description of both projects is added below:
 
@@ -36,7 +37,6 @@ limit: 10
 Please implement a solution to this problem in JavaScript (or your programming
 language of choice, if applying for a DevOps position) with attention to code structure
 and readability. Feel free to use low-level libraries like Lodash.
-
 
 
 **Zoo Exercise**

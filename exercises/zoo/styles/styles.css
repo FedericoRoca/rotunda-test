@@ -1,7 +1,6 @@
-:root {
-    --breakpoint-sm: 768px;
-    --breakpoint-lg: 1280px;
-  }
+body {
+    background-color: #ffeaea !important;
+}
 
 img {
     max-height: 75px;
@@ -12,11 +11,10 @@ img {
     img {
         max-height: 100px;
     }
-  }
+}
 
-  @media (min-width: 1200px) {
+@media (min-width: 1200px) {
     img {
         max-height: 150px;
     }
-  }
-
+}

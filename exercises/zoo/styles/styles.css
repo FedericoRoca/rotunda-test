@@ -2,19 +2,24 @@ body {
     background-color: #ffeaea !important;
 }
 
-img {
+.animal-img {
     max-height: 75px;
 }
 
+.form-control:focus, .form-select:focus {
+    border-color: #ffb5f3 !important;
+    box-shadow: 0 0 0 0.25rem rgb(255 183 217 / 25%) !important;
+    outline: none !important; 
+}
 
 @media (min-width: 768px) {
-    img {
+    .animal-img {
         max-height: 100px;
     }
 }
 
 @media (min-width: 1200px) {
-    img {
+    .animal-img {
         max-height: 150px;
     }
 }

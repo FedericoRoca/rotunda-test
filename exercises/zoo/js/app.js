@@ -41,14 +41,14 @@ Object.entries(AnimalClasses).forEach(([animalName, AnimalClass]) => {
   AnimalInstances[animalName] = new AnimalClass();
 });
 
-//Options inside select
+// Options inside select
 Object.entries(AnimalInstances).forEach((animal) => {
   const animalItem = document.createElement("option");
   animalItem.textContent = animal[0];
   animalListElement.append(animalItem);
 });
 
-//Event Listeners
+// Event Listeners
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -58,7 +58,7 @@ formElement.addEventListener("submit", (e) => {
 
   displayAnimalResult(selectedAnimal, phraseEntered);
 
-  formElement.reset();
+  animalPhraseElement.value = "";
 });
 
 function displayAnimalResult(selectedAnimal, phraseEntered) {
@@ -80,7 +80,7 @@ function displayAnimalResult(selectedAnimal, phraseEntered) {
   const animalImage = document.createElement("img");
   animalImage.src = `images/${selectedAnimal}.jpg`;
   animalImage.alt = `${selectedAnimal} image`;
-  animalImage.classList.add("img-fluid", "me-3", "rounded");
+  animalImage.classList.add("img-fluid", "me-3", "rounded", "animal-img");
 
   const resultTextContainer = document.createElement("div");
   resultTextContainer.innerHTML = `<strong>${selectedAnimal}:</strong> <span class="fst-italic">"${resultText}"</span>`;

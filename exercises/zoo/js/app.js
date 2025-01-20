@@ -51,11 +51,17 @@ Object.entries(AnimalInstances).forEach((animal) => {
 //Event Listeners
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();
-  
+
   resultsTitle.classList.remove("d-none");
   const selectedAnimal = animalListElement.value;
   const phraseEntered = animalPhraseElement.value;
 
+  displayAnimalResult(selectedAnimal, phraseEntered);
+
+  formElement.reset();
+});
+
+function displayAnimalResult(selectedAnimal, phraseEntered) {
   const animal = AnimalInstances[selectedAnimal];
   const resultText = animal.speak(phraseEntered);
 
@@ -82,6 +88,4 @@ formElement.addEventListener("submit", (e) => {
   resultElement.appendChild(animalImage);
   resultElement.appendChild(resultTextContainer);
   resultsContainer.appendChild(resultElement);
-
-  formElement.reset();
-});
+}
